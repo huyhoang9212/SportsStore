@@ -108,16 +108,6 @@
   <ItemGroup>
     <Folder Include="App_Start\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\SportsStore2\SportsStore.Domain\SportsStore.Domain.csproj">
-      <Project>{b1fc7142-dc4f-43f5-aea4-f20dcb967ae6}</Project>
-      <Name>SportsStore.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SportsStore2\SportsStore.WebUI\SportsStore.WebUI.csproj">
-      <Project>{079a7810-cb46-4547-b5a6-54cba3c2021d}</Project>
-      <Name>SportsStore.WebUI</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

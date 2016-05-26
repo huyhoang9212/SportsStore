@@ -13,17 +13,34 @@ namespace SportsStore.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // /
+            routes.MapRoute(null,
+                "", new { controller = "Product", action = "List", category = (string)null, page = 1 });
+
+            // /page-2
             routes.MapRoute(
                 name: null,
-                url:"page-{page}",
-                defaults: new { Controller = "Product", action="List"}
+                url: "page-{page}",
+                defaults: new { Controller = "Product", action = "List", category = (string)null },
+                constraints: new { page = @"\d+" }
             );
 
+            // /Soccer
+            routes.MapRoute(null,
+                url: "{category}",
+                defaults: new { controller="Product",action="List", page=1});
+
+            // /Soccer/page-2
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Product", action = "List", id = UrlParameter.Optional }
+                name: null,
+                url: "{category}/page-{page}",
+                defaults: new { controller = "Product", action = "List" },
+                constraints: new { page=@"\d+"}
             );
+
+            // default
+            routes.MapRoute(null,
+                url: "{controller}/{action}");
         }
     }
 }

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace SportsStore.WebUI.Models
 {
-    public class ProductsListViewModel
+    public class CartIndexViewModel
     {
-        public IEnumerable<Product> Products { get; set; }
-        public PagingInfo PagingInfo { get; set; }
-        public string CurrentCategory { get; set; }
+        public Cart Cart { get; set; }
+        public string ReturnUrl { get; set; }
     }
 }
